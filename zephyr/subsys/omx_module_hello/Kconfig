@@ -1,0 +1,19 @@
+# Copyright (c) 2020 Legrand North America, LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+
+# Kconfig -
+
+config OMX_MODULE_HELLO
+    bool "OMX Module \"Hello\""
+    select LOG
+    help
+      This option enables OMX Module Hello service
+
+if OMX_MODULE_HELLO
+
+module = OMX_MODULE_HELLO
+module-str = Log level for OMX Module Hello
+source "subsys/logging/Kconfig.template.log_config"
+
+endif # OMX_MODULE_HELLO

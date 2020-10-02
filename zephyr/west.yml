@@ -1,0 +1,30 @@
+# The west manifest file for upstream Zephyr OOT module OMX.
+#
+# The per-installation west configuration file, .west/config, sets the
+# path to the project containing this file in the [manifest] section's
+# "path" variable.
+#
+# This imports the latest upstream Zephyr manifest file.
+#
+# You can pass your manifest repositories to west init when creating a
+# new Zephyr installation. See the west documentation for more
+# information.
+#
+# Beginning with west 0.8, the following command-line options
+# can be used to initialize with a repository lacking a west.yml
+# file at the top level.
+#
+#   west init
+#     -m <repository>
+#     --mr <branch_name>
+#     --mf <manifest_pathname>
+#     <workspace>
+
+manifest:
+  version: 0.7  # This file uses syntax from west 0.7
+
+  projects: []
+  self:
+    path: # implicity uses repository name for path
+    file: west.yml
+    path-prefix: manifests/zp/zephyr-v2.3.0

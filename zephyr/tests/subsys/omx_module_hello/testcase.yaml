@@ -1,0 +1,3 @@
+tests:
+  omx.omx_module_hello:
+    tags: omx

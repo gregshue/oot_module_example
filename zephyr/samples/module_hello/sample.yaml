@@ -1,0 +1,14 @@
+sample:
+  description: Hello from <module> sample, the simplest Zephyr
+    application including <module> default configuration
+  name: hello from oot_module_example
+common:
+    tags: introduction
+    harness: console
+    harness_config:
+      type: one_line
+      regex:
+        - "Hello from oot_module_example!"
+tests:
+  sample.basic.oot_module_example_hello:
+    tags: introduction

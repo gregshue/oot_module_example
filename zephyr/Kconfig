@@ -1,0 +1,22 @@
+#
+# Copyright (c) 2020 Legrand North America, LLC.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Kconfig to configure Zephyr OOT module OMX
+
+menuconfig OMX
+	bool "OMX (OOT Module eXample)"
+	help
+	  Enable Zephyr OOT OMX (Out-of-tree Module eXample)
+
+if OMX
+
+module = OMX
+module-str = Log level for OMX module
+module-help = Enable (Disable) OMX module debug message output
+source "$(ZEPHYR_BASE)/subsys/logging/Kconfig.template.log_config"
+
+rsource "subsys/Kconfig"
+
+endif # OMX
