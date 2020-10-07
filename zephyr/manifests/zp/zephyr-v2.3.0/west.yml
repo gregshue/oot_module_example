@@ -37,6 +37,3 @@ manifest:
       remote: zephyrproject-rtos
       revision: v2.3.0
       import: true
-
-  self:
-    path: # implicity uses repository name for path
