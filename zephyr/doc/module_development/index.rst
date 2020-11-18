@@ -102,6 +102,7 @@ Zephyr out-of-tree module extensions:
        │   └── zp
        │       └── <zephyr-tag>
        │           └── west.yml
+       ├── projects
        ├── samples
        ├── scripts
        ├── subsys
@@ -158,7 +159,7 @@ directories, each of which may have one or more additional levels of
 subdirectories which are not described here.
 
 :file:`apps`
-    Product application configurations and code.
+    Application layer code integratable into one or more projects.
 
 :file:`boards`
     Board related code and configuration files provided by this module.
@@ -187,6 +188,16 @@ subdirectories which are not described here.
     - multiple versions of west projects (e.g. -rc1 vs -rc2)
     - multiple branches in west projects (e.g. latest release, LTS release)
     - forking of west projects (e.g. clone & locally fix bug quickly)
+
+:file:`projects`
+    Non-sample, non-test project unique files, e.g. prj.conf, CMakeLists.txt,
+    sample.yaml, docs/, source providing the required main().
+
+.. note::
+
+    Maximizing code reuse and unit test coverage naturally leads to
+    `main(void)` having an empty body, and the "project" is
+    fundamentally a set of configuration values.
 
 :file:`samples`
     Sample Zephyr applications that demonstrate the use of the

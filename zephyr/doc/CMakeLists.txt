@@ -117,9 +117,9 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 #
 # We need to make copies because Sphinx requires a single
 # documentation root directory, but Zephyr's documentation is
-# scattered around the tree in apps/, samples/, boards/, and doc/. Putting
-# them into a single rooted tree in the build directory is a
-# workaround for this limitation.
+# scattered around the tree in various directories (e.g. samples/,
+# boards/, and doc/). Putting them into a single rooted tree
+# in the build directory is a workaround for this limitation.
 set(EXTRACT_CONTENT_COMMAND
   ${CMAKE_COMMAND} -E env
   ZEPHYR_BASE=${OOT_BASE}
@@ -131,22 +131,25 @@ set(EXTRACT_CONTENT_COMMAND
   # We want to copy the .rst files in the following to the rst folder,
   # and also the doc folder inside rst.
   #   apps/
-  #   samples/
   #   boards/
+  #   projets/
+  #   samples/
   #
-  # Some files refer to items in samples/ and boards/ relative to
-  # their actual position in the Zephyr tree. For example, in
-  # subsystems/sensor.rst:
+  # Some files refer to items in boards/ and samples/
+  # relative to their actual position in the Zephyr tree.
+  # For example, in subsystems/sensor.rst:
   #
   # .. literalinclude:: ../../samples/sensor/mcp9808/src/main.c
   #
   # The additional copy is a hackaround so these references work.
   "*.rst:apps:${RST_OUT}"
   "*.rst:apps:${RST_OUT}/doc"
-  "*.rst:samples:${RST_OUT}"
-  "*.rst:samples:${RST_OUT}/doc"
   "*.rst:boards:${RST_OUT}"
   "*.rst:boards:${RST_OUT}/doc"
+  "*.rst:projects:${RST_OUT}"
+  "*.rst:projects:${RST_OUT}/doc"
+  "*.rst:samples:${RST_OUT}"
+  "*.rst:samples:${RST_OUT}/doc"
   )
 
 add_custom_target(

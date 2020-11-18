@@ -65,6 +65,13 @@ and other files that use other licensing, as described in
            to submit patches directly to the project.</p>
        </li>
        <li class="grid-item">
+	   <a href="projects/index.html">
+               <span class="grid-icon fa fa-list-alt"></span>
+	       <h2>Projects</h2>
+	   </a>
+	   <p>A list of Zephyr projects (configurations) provided by Zephyr OOT module OMX</p>
+       </li>
+       <li class="grid-item">
 	   <a href="samples/index.html">
                <span class="grid-icon fa fa-cogs"></span>
 	       <h2>Samples and Demos</h2>
@@ -74,7 +81,7 @@ and other files that use other licensing, as described in
        <li class="grid-item">
 	   <a href="apps/index.html">
                <span class="grid-icon fa fa-server"></span>
-	       <h2>Embedded Apps</h2>
+	       <h2>Service Apps</h2>
 	   </a>
 	   <p>A list of embedded applications (services) provided by Zephyr OOT module OMX</p>
        </li>
@@ -122,6 +129,7 @@ and other files that use other licensing, as described in
    contribute/index.rst
    module_development/index.rst
    apps/index.rst
+   projects/index.rst
    reference/index.rst
    guides/index.rst
    security/index.rst

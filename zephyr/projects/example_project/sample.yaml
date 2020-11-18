@@ -1,0 +1,13 @@
+sample:
+  description: Example of the simplest <module> project
+  name: Example Module Project
+common:
+    tags: introduction
+    harness: console
+    harness_config:
+      type: one_line
+      regex:
+        - "Hello from oot_module_example!"
+tests:
+  project.example.module_project:
+    tags: introduction
