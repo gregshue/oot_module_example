@@ -3,6 +3,7 @@ build:
   kconfig: zephyr/Kconfig
 samples:
   - zephyr/samples
+  - zephyr/projects
 tests:
   - zephyr/tests
 boards:
