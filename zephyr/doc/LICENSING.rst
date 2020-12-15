@@ -1,9 +1,9 @@
 :orphan:
 
-.. _zephyr_oot_module_omx_licensing:
+.. _zephyr_module_omx_licensing:
 
-Licensing of Zephyr Project components
-######################################
+Licensing of Zephyr Module OMX
+##############################
 
 The Zephyr kernel tree imports or reuses packages, scripts and other files that
 are not covered by the `Apache 2.0 License`_. In some places

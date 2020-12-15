@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
+
 # Detect the platform reliably
 if(ZEPHYR_BASE)
   if (NOT CONFIG_OMX)
@@ -14,8 +15,7 @@ endif()
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
-get_filename_component(MODULE_NAME ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
-get_filename_component(MODULE_NAME ${MODULE_NAME} NAME)
+get_filename_component(MODULE_NAME ${ZEPHYR_CURRENT_MODULE_DIR} NAME)
 add_definitions(
   -DMODULE_NAME="${MODULE_NAME}"
   )

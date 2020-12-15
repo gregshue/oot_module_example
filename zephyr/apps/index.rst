@@ -3,7 +3,7 @@
 Embedded Apps
 #############
 
-Zephyr OOT module OMX provides the following embedded applications/services.
+Zephyr module OMX provides the following embedded applications/services.
 
 
 ..

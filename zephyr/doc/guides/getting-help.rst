@@ -6,4 +6,4 @@
 Asking for Help
 ###############
 
-You can ask for help for the Zephyr OOT module OMX as part of the Zephyr Project.
+You can ask for help for the Zephyr module OMX as part of the Zephyr Project.

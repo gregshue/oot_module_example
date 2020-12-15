@@ -8,10 +8,10 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE} ..)
 
 string(REGEX REPLACE
   "/zephyr/doc[a-zA-Z_/-]*$" ""
-  OOT_MODULE_BASE
+  MANIFEST_MODULE_BASE
   ${CMAKE_CURRENT_SOURCE_DIR})
-get_filename_component(OOT_MODULE_NAME ${OOT_MODULE_BASE} NAME)
-file(TO_CMAKE_PATH "${OOT_MODULE_BASE}/zephyr" OOT_MODULE_BASE)
+get_filename_component(MANIFEST_MODULE_NAME ${MANIFEST_MODULE_BASE} NAME)
+file(TO_CMAKE_PATH "${MANIFEST_MODULE_BASE}/zephyr" MANIFEST_MODULE_BASE)
 
 
 
@@ -26,8 +26,8 @@ endif()
 
 file(TO_CMAKE_PATH "${ZEPHYR_BASE}" ZEPHYR_BASE)
 
-message(STATUS "OOT Module name: ${OOT_MODULE_NAME}")
-message(STATUS "OOT Module base: ${OOT_MODULE_BASE}")
+message(STATUS "MANIFEST Module name: ${MANIFEST_MODULE_NAME}")
+message(STATUS "MANIFEST Module base: ${MANIFEST_MODULE_BASE}")
 message(STATUS "Zephyr base: ${ZEPHYR_BASE}")
 if(DEFINED WEST)
   execute_process(COMMAND west --version
@@ -51,7 +51,7 @@ if(${SPHINXBUILD} STREQUAL SPHINXBUILD-NOTFOUND)
 endif()
 
 # Include version info
-include(${OOT_MODULE_BASE}/cmake/version.cmake)
+include(${MANIFEST_MODULE_BASE}/cmake/version.cmake)
 # Process modules
 set(KCONFIG_BINARY_DIR ${CMAKE_BINARY_DIR}/Kconfig)
 file(MAKE_DIRECTORY ${KCONFIG_BINARY_DIR})
@@ -122,7 +122,7 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 # in the build directory is a workaround for this limitation.
 set(EXTRACT_CONTENT_COMMAND
   ${CMAKE_COMMAND} -E env
-  ZEPHYR_BASE=${OOT_BASE}
+  ZEPHYR_BASE=${MANIFEST_BASE}
   ${PYTHON_EXECUTABLE} scripts/extract_content.py
   # Ignore any files in the output directory.
   --ignore ${CMAKE_CURRENT_BINARY_DIR}
@@ -163,7 +163,7 @@ add_custom_target(
 # For incremental builds not to miss any source change this MUST be kept
 # a superset of INPUT= and FILE_PATTERNS= in zephyr.doxyfile.in
 file(GLOB_RECURSE  DOXY_SOURCES
-  ${OOT_MODULE_BASE}/include/*.[c,h,S]
+  ${MANIFEST_MODULE_BASE}/include/*.[c,h,S]
   ${ZEPHYR_BASE}/include/*.[c,h,S]
   ${ZEPHYR_BASE}/kernel/include/kernel_arch_interface.h
   ${ZEPHYR_BASE}/lib/libc/*.[c,h,S]
@@ -252,7 +252,7 @@ add_custom_target(
       --keep-module-paths
       --modules
                 Subsystem,subsys,${ZEPHYR_BASE}/subsys
-                Subsystem,subsys,${OOT_MODULE_BASE}/subsys
+                Subsystem,subsys,${MANIFEST_MODULE_BASE}/subsys
 
   VERBATIM
   WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
@@ -261,7 +261,7 @@ add_custom_target(
 
 set(KI_SCRIPT ${ZEPHYR_BASE}/scripts/filter-known-issues.py)
 set(FIX_TEX_SCRIPT ${ZEPHYR_BASE}/doc/scripts/fix_tex.py)
-set(CONF_DIR ${OOT_MODULE_BASE}/.known-issues/doc)
+set(CONF_DIR ${MANIFEST_MODULE_BASE}/.known-issues/doc)
 
 #
 # HTML section

@@ -1,4 +1,4 @@
-.. _zephyr_oot_module_development:
+.. _omx_module_development:
 
 Module Development
 ##################
@@ -62,7 +62,7 @@ Source Tree Structure
   "We can solve any problem by introducing an extra level of indirection."
   -- David J. Wheeler
 
-Understanding the Zephyr OOT module OMX source tree can be helpful in
+Understanding the Zephyr module OMX source tree can be helpful in
 locating the code associated with a particular module feature. This is
 especially important when extending an existing external repository.
 
@@ -196,7 +196,7 @@ subdirectories which are not described here.
 .. note::
 
     Maximizing code reuse and unit test coverage naturally leads to
-    `main(void)` having an empty body, and the "project" is
+    main() having an empty body, and the "project" is
     fundamentally a set of configuration values.
 
 :file:`samples`
@@ -217,13 +217,13 @@ subdirectories which are not described here.
     Test code and benchmarks for module features.
 
 
-Extending a Repository to be a Zephyr OOT Module
-************************************************
+Extending a Repository to be a Zephyr Module
+********************************************
 
 Follow these steps to extend an existing codebase repository to be a
-Zephyr OOT module.
+Zephyr module.
 
-#. Clone the Zephyr OOT module example into the new workspace.
+#. Clone the Zephyr module example into the new workspace.
 
    For example, in a Unix shell enter:
 
@@ -258,24 +258,24 @@ Zephyr OOT module.
    and file contents (including documentation and hidden files).
 
 
-Verifying Zephyr OOT Modules
-============================
+Verifying Zephyr Modules
+========================
 
-Zephyr OOT modules must describe the environment and dependencies needed
-to develop and verify all module functionality.  Zephyr OOT modules also
-should be designed to be reused by other Zephyr OOT modules or applications.
+Zephyr modules must describe the environment and dependencies needed
+to develop and verify all module functionality.  Zephyr modules also
+should be designed to be reused by other Zephyr modules or applications.
 This means:
 
-  - Zephyr OOT Modules should support using Zephyr development and CI
+  - Zephyr modules should support using Zephyr development and CI
     tools such as :file:`west` and :file:`sanitycheck`.
 
-  - Zephyr OOT Modules documentation should parallel the Zephyr kernel
+  - Zephyr modules documentation should parallel the Zephyr kernel
     documentation structure, patterns, and style.
 
-  - Zephyr OOT Module code should be designed to co-exist with an arbitrary
-    set of other OOT modules.
+  - Zephyr module code should be designed to co-exist with an arbitrary
+    set of other Zephyr modules.
 
-  - Zephyr OOT Modules should contain test suites to fully verify all
+  - Zephyr modules should contain test suites to fully verify all
     provided functionality.
 
 The points above allow any module to be verified using the following steps:

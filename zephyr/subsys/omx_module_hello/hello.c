@@ -17,7 +17,7 @@ int32_t omx_module_hello_said(void)
 	return 1;
 }
 
-static int init(struct device *dev)
+static int init(const struct device *dev)
 {
 	ARG_UNUSED(dev);
 

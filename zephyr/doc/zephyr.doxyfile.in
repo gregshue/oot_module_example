@@ -223,6 +223,7 @@ TAB_SIZE               = 8
 ALIASES                = "rst=\verbatim embed:rst:leading-asterisk" \
                          "endrst=\endverbatim"
 
+ALIASES += option{1}="\verbatim embed:rst:inline :option:`\1` \endverbatim"
 ALIASES += req{1}="\ref ZEPH_\1 \"ZEPH-\1\" "
 ALIASES += satisfy{1}="\xrefitem satisfy \"Satisfies requirement\" \"Requirement Implementation\" \1"
 ALIASES += verify{1}="\xrefitem verify \"Verifies requirement\" \"Requirement Verification\" \1"
@@ -745,7 +746,7 @@ WARN_LOGFILE           =
 # This MUST be kept in sync with DOXY_SOURCES in doc/CMakeLists.txt
 # for incremental (and faster) builds to work correctly.
 INPUT                  = custom-doxygen/mainpage.md \
-                         @OOT_MODULE_BASE@/include/ \
+                         @MANIFEST_MODULE_BASE@/include/ \
 			 @ZEPHYR_BASE@/kernel/include/kernel_arch_interface.h \
                          @ZEPHYR_BASE@/include/ \
                          @ZEPHYR_BASE@/lib/libc/minimal/include/ \

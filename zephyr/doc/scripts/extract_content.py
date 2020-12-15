@@ -197,9 +197,9 @@ def main():
         sys.exit("ZEPHYR_BASE environment variable undefined.")
     zephyr_base = os.environ["ZEPHYR_BASE"]
 
-    if "OOT_MODULE_BASE" not in os.environ:
-        sys.exit("OOT_MODULE_BASE environment variable undefined.")
-    zephyr_base = os.environ["OOT_MODULE_BASE"]  #TODO: Need to figure out the functional logic
+    if "MANIFEST_MODULE_BASE" not in os.environ:
+        sys.exit("MANIFEST_MODULE_BASE environment variable undefined.")
+    zephyr_base = os.environ["MANIFEST_MODULE_BASE"]  #TODO: Need to figure out the functional logic
 
     if not args.ignore:
         ignore = ()

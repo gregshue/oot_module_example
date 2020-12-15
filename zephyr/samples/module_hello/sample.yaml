@@ -10,5 +10,5 @@ common:
       regex:
         - "Hello from oot_module_example!"
 tests:
-  sample.basic.oot_module_example_hello:
+  sample.basic.oot_module_example.hello:
     tags: introduction

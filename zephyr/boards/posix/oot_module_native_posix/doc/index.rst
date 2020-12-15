@@ -1,4 +1,4 @@
-.. _oot_module_native_posix:
+.. _omx_native_posix:
 
 OMX Native POSIX execution (native_posix)
 #########################################
@@ -16,13 +16,13 @@ Documentation placeholder for OMX Native POSIX board
 This board provides a few peripherals such as an Ethernet driver and UART.
 See `Peripherals`_ for more information.
 
-.. _oot_module_native_posix_deps:
+.. _omx_native_posix_deps:
 
 Host system dependencies
 ========================
 
 
-.. _oot_module_native_important_limitations:
+.. _omx_native_important_limitations:
 
 Important limitations
 *********************
@@ -44,7 +44,7 @@ Specify the native_posix board target to build a native POSIX application:
 .. zephyr-app-commands::
    :zephyr-app: samples/hello_world
    :host-os: unix
-   :board: oot_module_native_posix
+   :board: omx_native_posix
    :goals: build
    :compact:
 

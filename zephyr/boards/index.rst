@@ -3,7 +3,7 @@
 Supported Boards
 ################
 
-Zephyr OOT module OMX provides definitions for the following boards.
+Zephyr module OMX provides definitions for the following boards.
 
 To add support documentation for a new board, please use the template available
 under :zephyr_file:`doc/templates/board.tmpl`
