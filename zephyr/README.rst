@@ -116,13 +116,13 @@ appropriately for your board:
          .. code-block:: bash
 
             west build -p auto -b native_posix \
-              omx_module_example/zephyr/samples/module_hello
+              oot_module_example/zephyr/samples/module_hello
 
       #. (Flash and) Run the sample from the command line
 
          .. code-block:: bash
 
-            ./build/omx_module_example/zephyr/samples/module_hello/native_posix/zephyr/zephyr.exe
+            ./build/oot_module_example/zephyr/samples/module_hello/native_posix/zephyr/zephyr.exe
 
       #. Build and run the sample using Zephyr's
          :ref:`sanitycheck script <sanitycheck_script>`
@@ -143,11 +143,13 @@ This module is designed to be a boilerplate for other modules simply by:
 
 - cloning
 
-- renaming module names and abbreviations to reference your module:
+- renaming module names and abbreviations to reference your module
+  (including file and directory names):
 
-  - 'Out-of-tree Module eXample'
-  - 'OMX'
-  - 'omx'
+  - 'Out-of-tree Module eXample'   # Module textual name
+  - 'oot_module_example'           # Module directory name
+  - 'OMX'                          # Module abbreviation (uc)
+  - 'omx'                          # Module abbreviation (lc)
 
 - stripping out any unnecessary content (e.g. no drivers or subsystems)
 
