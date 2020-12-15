@@ -1,7 +1,7 @@
-.. _omx_module_example_project_doc:
+.. _omx_example_project_doc:
 
-OMX Module Example Project
-##########################
+OMX Example Project
+###################
 
 Overview
 ********

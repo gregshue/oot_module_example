@@ -1,4 +1,4 @@
-.. _zephyr_oot_module_omx_release_notes:
+.. _omx_release_notes:
 
 Release Notes
 #############

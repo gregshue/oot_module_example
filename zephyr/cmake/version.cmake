@@ -89,8 +89,8 @@ endif()
 
 set(ZEPHYR_VERSION_CODE ${KERNEL_VERSION_NUMBER_INT})
 
-# Also pick up this OOT Module version
-file(READ ${OOT_MODULE_BASE}/VERSION ver)
+# Also pick up this Zephyr Module version
+file(READ ${MANIFEST_MODULE_BASE}/VERSION ver)
 
 string(REGEX MATCH "VERSION_MAJOR = ([0-9]*)" _ ${ver})
 set(PROJECT_VERSION_MAJOR ${CMAKE_MATCH_1})
@@ -124,7 +124,7 @@ endif()
 set(PROJECT_VERSION_STR ${PROJECT_VERSION}${PROJECT_VERSION_EXTRA_STR})
 
 if (NOT NO_PRINT_VERSION)
-	message(STATUS "OOT module OMX version: ${PROJECT_VERSION_STR} (${OOT_MODULE_BASE})")
+	message(STATUS "Zephyr Module OMX version: ${PROJECT_VERSION_STR} (${MANIFEST_MODULE_BASE})")
 endif()
 
 # Cleanup convenience variables

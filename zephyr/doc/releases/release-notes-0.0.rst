@@ -2,10 +2,10 @@
 
 .. _zephyr_0.0:
 
-Zephyr OOT Module OMX 0.0.0 (Working Draft)
-###########################################
+Zephyr Module OMX 0.0.0 (Working Draft)
+#######################################
 
-We are pleased to announce the release of Zephyr OOT module OMX version 0.0.0.
+We are pleased to announce the release of Zephyr module OMX version 0.0.0.
 
 Major enhancements with this release include:
 

@@ -3,7 +3,7 @@
 API Overview
 ############
 
-The table lists APIs and information provided by Zephyr OOT module OMX,
+The table lists APIs and information provided by Zephyr module OMX,
 including ...
 
 .. list-table::

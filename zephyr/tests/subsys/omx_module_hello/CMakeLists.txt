@@ -5,14 +5,18 @@ cmake_minimum_required(VERSION 3.13.1)
 # Extract module path and names
 string(REGEX REPLACE
   "/zephyr/tests/[a-zA-Z_/-]*$" ""
-  OOT_MODULE_BASE
+  MODULE_BASE
   ${CMAKE_CURRENT_SOURCE_DIR})
-get_filename_component(OOT_MODULE_NAME ${OOT_MODULE_BASE} NAME)
-get_filename_component(OOT_PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
+get_filename_component(MODULE_NAME
+  ${MODULE_BASE} NAME)
+
+get_filename_component(PROJECT_NAME
+  ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-project(${OOT_PROJECT_NAME})
+project(${PROJECT_NAME})
 
 target_sources(app PRIVATE
   src/main.c

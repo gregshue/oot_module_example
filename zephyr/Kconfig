@@ -3,12 +3,12 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# Kconfig to configure Zephyr OOT module OMX
+# Kconfig to configure Zephyr module OMX
 
 menuconfig OMX
-	bool "OMX (OOT Module eXample)"
+	bool "OMX (Out-of-tree Module eXample)"
 	help
-	  Enable Zephyr OOT OMX (Out-of-tree Module eXample)
+	  Enable Zephyr module OMX (Out-of-tree Module eXample)
 
 if OMX
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Zephyr OOT module OMX documentation build configuration file, created by
+# Zephyr module OMX documentation build configuration file, created by
 # sphinx-quickstart on Fri May  8 11:43:01 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -23,9 +23,9 @@ if "ZEPHYR_BUILD" not in os.environ:
     sys.exit("$ZEPHYR_BUILD environment variable undefined.")
 ZEPHYR_BUILD = os.path.abspath(os.environ["ZEPHYR_BUILD"])
 
-if "OOT_MODULE_BASE" not in os.environ:
-    sys.exit("$OOT_MODULE_BASE environment variable undefined.")
-OOT_MODULE_BASE = os.path.abspath(os.environ["OOT_MODULE_BASE"])
+if "MANIFEST_MODULE_BASE" not in os.environ:
+    sys.exit("$MANIFEST_MODULE_BASE environment variable undefined.")
+MANIFEST_MODULE_BASE = os.path.abspath(os.environ["MANIFEST_MODULE_BASE"])
 
 # Add the 'extensions' directory to sys.path, to enable finding Sphinx
 # extensions within.
@@ -78,7 +78,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Zephyr OOT module OMX'
+project = u'Zephyr module OMX'
 copyright = u'2015-2020 Zephyr Project members and individual contributors'
 author = u'The Zephyr Project'
 
@@ -89,7 +89,7 @@ try:
     version_minor = None
     patchlevel = None
     extraversion = None
-    for line in open(os.path.join(OOT_MODULE_BASE, 'VERSION')):
+    for line in open(os.path.join(MANIFEST_MODULE_BASE, 'VERSION')):
         key, val = [x.strip() for x in line.split('=', 2)]
         if key == 'VERSION_MAJOR':
             version_major = val
@@ -195,7 +195,7 @@ else:
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "Zephyr OOT Module OMX Documentation"
+html_title = "Zephyr Module OMX Documentation"
 
 # This value determines the text for the permalink; it defaults to "¶".
 # Set it to None or the empty string to disable permalinks.
@@ -454,7 +454,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'zephyr.tex', u'Zephyr OOT Module OMX Documentation',
+  (master_doc, 'zephyr.tex', u'Zephyr Module OMX Documentation',
    u'many', 'manual'),
 ]
 
@@ -497,7 +497,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'zephyr', u'Zephyr OOT Module OMX Documentation',
+  (master_doc, 'zephyr', u'Zephyr Module OMX Documentation',
    author, 'Zephyr', 'One line description of project.',
    'Miscellaneous'),
 ]

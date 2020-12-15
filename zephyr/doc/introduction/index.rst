@@ -1,4 +1,4 @@
-.. _introducing_zephyr_oot_module_omx:
+.. _omx_introducing_omx_module:
 
 Introduction
 ############

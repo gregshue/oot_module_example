@@ -17,7 +17,7 @@ The Zephyr Project is a scalable real-time operating system (RTOS) supporting
 multiple hardware architectures, optimized for resource constrained devices,
 and built with security in mind.
 
-The Zephyr OOT module OMX (Out-of-tree Module eXample) is a reference
+The Zephyr module OMX (Out-of-tree Module eXample) is a reference
 for how existing repositories may be extended into a well-integrated
 Zephyr module.
 
@@ -29,8 +29,139 @@ Zephyr module.
 Getting Started
 ***************
 
-Welcome to Zephyr! See the `Introduction to Zephyr`_ for a high-level overview,
-and the documentation's `Getting Started Guide`_ to start developing.
+Welcome to Zephyr! See the `Introduction to Zephyr`_ for a high-level
+overview, and the documentation's `Getting Started Guide`_ to start
+developing.
+
+The Zephyr module OMX is a compliant extension of the Zephyr Project
+ecosystem. It is a manifest module repository. Development work is
+supported in the same range of environments as the main Zephyr code
+repository.
+
+Checking Out Code
+=================
+
+The Zephyr module OMX may be cloned and added to the Zephyr build system
+in exactly the same way as any other repository.
+
+Follow this guide to:
+
+- Get the source code with Zephyr module OMX as the :ref:`west <west>`
+  manifest repository
+- Build and run a sample application
+
+
+Get Zephyr and install Python dependencies
+------------------------------------------
+
+Clone Zephyr module OMX and its dependencies into a new :ref:`west <west>`
+workspace named :file:`zp`. You'll also install additional Python
+dependencies.
+
+.. tabs::
+
+   .. group-tab:: Ubuntu
+
+      #. Get the Zephyr source code:
+
+         .. code-block:: bash
+
+            west init \
+              -m https://github.com/zephyrproject-rtos/oot_module_example \
+              --mr zephyr \
+              --mf zephyr/manifests/zp/zephyr-v2.4.0/west.yml \
+              ~/zp
+            cd ~/zp
+            west update
+            source zephyr/zephyr-env.sh
+
+      #. Export a :ref:`Zephyr CMake packate <cmake_pkg>`. This allows CMake to
+         automatically load boilerplate code required for building Zephyr
+         applications.
+
+         .. code-block:: console
+
+            west zephyr-export
+
+      #. Install additional Python dependencies specified by any module
+
+         .. code-block:: bash
+ 
+            pip3 install --user -r ~/zp/zephyr/scripts/requirements.txt
+            pip3 install --user -r \
+              ~/zp/oot_module_example/zephyr/scripts/requirements.txt
+
+      #. Configure :ref:`west <west>` to place build output in 
+         project-board-specific folders
+
+         .. code-block:: bash
+
+            west config \
+              build.dir-fmt ${ZEPHYR_BASE}/../build/{source_dir}/{board}
+
+
+Build and Run the OMX Module Hello Sample
+-----------------------------------------
+
+Build the :ref:`OMX module-hello sample <omx-module-hello-sample> with
+:ref:`west build <west-building>`, changing ``<your-board-name>``
+appropriately for your board:
+
+.. tabs::
+
+   .. group-tab:: Ubuntu
+
+      #. Build the sample directly from the command line
+
+         .. code-block:: bash
+
+            west build -p auto -b native_posix \
+              omx_module_example/zephyr/samples/module_hello
+
+      #. (Flash and) Run the sample from the command line
+
+         .. code-block:: bash
+
+            ./build/omx_module_example/zephyr/samples/module_hello/native_posix/zephyr/zephyr.exe
+
+      #. Build and run the sample using Zephyr's
+         :ref:`sanitycheck script <sanitycheck_script>`
+
+         .. code-block:: bash
+
+            zephyr/scripts/sanitycheck -p native_posix \
+              -T oot_module_example/zephyr/samples/module_hello
+
+Once the build system integration is verified, a branch of the module
+may be checked out and developed without impacting the other repository
+clones.
+
+Creating a New Module
+=====================
+
+This module is designed to be a boilerplate for other modules simply by:
+
+- cloning
+
+- renaming module names and abbreviations to reference your module:
+
+  - 'Out-of-tree Module eXample'
+  - 'OMX'
+  - 'omx'
+
+- stripping out any unnecessary content (e.g. no drivers or subsystems)
+
+
+The following points should be kept in mind for any new module:
+
+- Module infrastructure and interface to the Zephyr build system will
+  evolve. Tracking and propagating those evolutions is important for
+  ongoing support.
+
+- Module code may be referenced by future modules, increasing the risk
+  of name collisions for symbols in the module that do not share the
+  same prefix.
+
 
 Community Support
 *****************
